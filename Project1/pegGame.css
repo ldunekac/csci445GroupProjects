@@ -1,1 +1,36 @@
+body {
+	background-color: #C3834C;
+}
 
+.controls {
+	text-align: center;
+	position: relative;
+	left: 50%;
+}
+
+
+/*CSS3 ----> Used CSS3 Animations*/
+/*Title Changes Color*/
+h1 {
+	text-align: center;
+	-webkit-animation: myAnimation 5; /* Chrome, Safari, Opera */
+	-webkit-animation-iteration-count: infinite;
+    animation: myAnimation 5s;
+    animation-iteration-count: infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myAnimation {
+    0%   {color: red;}
+    25%  {color: gold;}
+    50%  {color: blue;}
+    100% {color: #ff69b4;}
+}
+
+/* Standard syntax */
+@keyframes myAnimation {
+    0%   {color: red;}
+    25%  {color: gold;}
+    50%  {color: blue;}
+    100% {color: #ff69b4;}
+}
