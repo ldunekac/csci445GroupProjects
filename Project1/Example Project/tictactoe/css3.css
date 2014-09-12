@@ -1,0 +1,39 @@
+body{
+	background-color:#D9F0FF;
+}
+
+#tictactoe_background{
+	/*/margin-top:30px;/*/
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	width: 500px;
+	height:500px;
+	border-radius:25px; 
+   -moz-border-radius:25px;
+	box-shadow: 10px 10px 5px #888888;
+	background-color:#004996;
+}
+
+#tictactoe_board{
+	position:absolute;
+	width:450px; 
+	height:450px;
+	margin-left:25px;
+	margin-top:25px;
+	background-color:#000000; 
+	line-height:.8em;
+}
+
+#content{
+	text-align:center;
+}
+
+#controls{
+	margin-top:30px;
+}
+
+#reset{
+	width:85px;
+	height:34px;
+}
