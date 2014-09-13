@@ -1,27 +1,68 @@
-/*
-Wonderful!
+board = [];
 
-Globals
-board 
+window.onload = function(){
 
-Common functions
+		var c = document.createElement("canvas");
+		c.setAttribute('id','boardCanvas');			
+		c.setAttribute('width',700);	
+		c.setAttribute('height',700);
 
-getPegAt(x,y)
-	-- Will return the peg that is at the absolute location of the click
+		document.getElementById("gameBoard").appendChild(c);		//Add the canvas to the division
+		c.onclick = showMoves;
+		//Make some HTML5 modifications to each canvas
+		var ctx=c.getContext('2d');								//Get the context - needed for HTML5 manipulation
+		ctx.fillStyle='#000000';								//Make it blank to begin with
+		ctx.fillRect(0,0,700,700);							//Shape it
+		makeBoard();
+		drawBoard();
+}
 
-getValidMoves(peg)
-	-- You cliked on the peg and the pegs returned will be the vaid location the peg can jump to
-	-- This will also chane the color of the valid move loaction
+function drawBoard()
+{
+	var c = document.getElementById('boardCanvas');
+	var ctx = c.getContext('2d');
+	for (var i = 0; i < board.length; i++) {
+		
+		if(board[i].pegIn)
+			ctx.fillStyle = 'blue';
+		else
+			ctx.fillStyle = 'green';
+		
+		ctx.beginPath();
+		ctx.arc(board[i].x,board[i].y,board[i].radious,0,2*Math.PI,false);
+		ctx.fill();
+		ctx.stroke();
+	};
+}
 
-jump(peg, location) -- This is a move
-	-- move the peg to that location and remove the peg inbetween
-	-- add the current state to the list of previous states
+function makeBoard()
+{
+	var c = document.getElementById('boardCanvas');
+	var numberOfRows = 5;
+	for (var i = 0; i < numberOfRows; i++) {
+		for(var j = 0; j < i + 1; j++)
+		{
+			var spacing = c.width / (i+2);
+			var peg = new Peg(spacing*j + spacing,100*(i+1),i);
+			if(j==0)
+				peg.pegIn = false;
+			board.push(peg);
+		};
+	};
+}
 
-reset()
-	-- reset the current global board
 
-undo()
-	-- set the pervious state to the global state
+function Peg(x,y,rowID)
+{
+	this.x = x;
+	this.y = y;
+	this.radious = 10;
+	this.rowID = rowID;
+	this.pegIn = true;
+}
 
-
-*/
+function showMoves(e)
+{
+	var xpos = e.clientX;
+	var ypos = y.clientY;
+}
