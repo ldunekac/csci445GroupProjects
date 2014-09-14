@@ -131,3 +131,53 @@ function findValidMoves(boardPosition)
 	// check column aka /
 	// check diagonal aka \
 }
+
+/* Selects a peg to move */
+function selectPeg()
+{
+
+}
+
+/* unselects a peg */
+function unselectPeg()
+{
+
+}
+
+/* makes a move on the board */
+function makeMove()
+{
+
+}
+
+/* Checks to see if only one peg is left and game is won */
+function checkWin()
+{
+
+}
+
+/* Checks if no more valid moves exist */
+function checkDraw()
+{
+
+}
+
+/* Runs through game letting player take turns until Win or Draw. Then displays appropriate end message */
+function gamePlay() 
+{
+    while ((checkWin() && checkDraw()) == false) 
+    {
+        selectPeg();
+        makeMove();
+    }
+
+    if ( checkWin() == true) 
+    {
+        displayWin();
+    }
+    else
+    {
+        displayDraw();
+    }
+
+}
