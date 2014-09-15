@@ -3,7 +3,7 @@ availablePegs = [];
 CHOSE_PEG = 1;
 CHOSE_EMPTY_SPOT = 2;
 selectedPeg = null;
-state = 1; 
+state = CHOSE_PEG; 
 
 
 window.onload = function(){
@@ -21,6 +21,7 @@ window.onload = function(){
 		ctx.fillRect(0,0,700,700);							//Shape it
 		makeBoard();
 		drawBoard();
+		document.getElementById("reset").onclick = reset;
 }
 
 function drawBoard(){
@@ -277,7 +278,7 @@ function advance(e)
 
 function gameLogic(x,y)
 {
-	if(state == 1)
+	if(state == CHOSE_PEG)
 	{
 		for(var i = 0; i < 15; i++)
 		{
@@ -288,7 +289,7 @@ function gameLogic(x,y)
 				{
 					selectedPeg = board[i];
 					board[i].inQuestion = true;
-					state = 2;
+					state = CHOSE_EMPTY_SPOT;
 				}
 				for(var j = 0; j < availablePegs.length; j++)
 				{
@@ -298,13 +299,13 @@ function gameLogic(x,y)
 			}
 		}
 	}
-	else if(state == 2)
+	else if(state == CHOSE_EMPTY_SPOT)
 	{
 		for(var i = 0; i < 15; i++)
 		{
 			if((x-board[i].x)*(x-board[i].x) + (y-board[i].y)*(y-board[i].y) < board[i].radious*board[i].radious)
 			{
-				state = 1;
+				state = CHOSE_PEG;
 				if(board[i].canJumpTo)
 				{
 					jump(selectedPeg, board[i]);
@@ -313,7 +314,7 @@ function gameLogic(x,y)
 				} 
 				else if (!board[i].pegIn)
 				{
-					state = 2;
+					state = CHOSE_EMPTY_SPOT;
 				}
 				else
 				{
@@ -352,4 +353,12 @@ function checkWin()
 		drawBoard();
 		alert("YOU WIN!");
 	}
+}
+
+function reset()
+{
+	board = [];
+	state = CHOSE_PEG;
+	makeBoard();
+	drawBoard();
 }
