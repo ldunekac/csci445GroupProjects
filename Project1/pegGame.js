@@ -59,10 +59,9 @@ function makeBoard(){
 		{
 			var spacing = c.width / (i+2);
 			var peg = new Peg(spacing*j + spacing,100*(i+1),i,j);
-			peg.pegIn = false;
-			if((i==0 && j==0) || (i==1 && j==0))
+			if((i==0 && j==0) )
 			{
-				peg.pegIn = true;
+				peg.pegIn = false;
 			}
 			board.push(peg);
 		};
@@ -258,6 +257,7 @@ function jump(from, to)
 	}
 	
 	from.pegIn = false;
+	from.inQuestion = false;
 	to.pegIn = true;
 	for(var i = 0; i < board.length; i++){
 		if(board[i].row == pegToRemoveRow && board[i].column == pegToRemoveColumn)
@@ -287,6 +287,7 @@ function gameLogic(x,y)
 				if(availablePegs.length > 0)
 				{
 					selectedPeg = board[i];
+					board[i].inQuestion = true;
 					state = 2;
 				}
 				for(var j = 0; j < availablePegs.length; j++)
@@ -309,6 +310,10 @@ function gameLogic(x,y)
 					jump(selectedPeg, board[i]);
 					ereasePossibleMoves();
 					checkWin();
+				} 
+				else if (!board[i].pegIn)
+				{
+					state = 2;
 				}
 				else
 				{
@@ -327,6 +332,7 @@ function ereasePossibleMoves()
 	for(var i = 0; i < 15; i++)
 	{
 		board[i].canJumpTo = false;
+		board[i].inQuestion = false;
 	}
 	pegsAvailable = [];
 }
