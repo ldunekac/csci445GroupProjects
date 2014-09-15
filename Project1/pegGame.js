@@ -76,9 +76,9 @@ function Peg(x, y, rowID, columnID){
 	this.radious = 10;
 	this.row = rowID;
 	this.column = columnID;
-	this.pegIn = true;
-	this.canJumpTo = false;
-	this.inQuestion = false;
+	this.pegIn = true; // If a peg is in the peg
+	this.canJumpTo = false; // true when a peg can jump to it
+	this.inQuestion = false; // this is the peg that willjump
 }
 
 function findValidMoves(boardPosition)
@@ -278,6 +278,9 @@ function advance(e)
 
 function gameLogic(x,y)
 {
+	/*
+		This is the game logic!
+	*/ 
 	if(state == CHOSE_PEG)
 	{
 		for(var i = 0; i < 15; i++)
