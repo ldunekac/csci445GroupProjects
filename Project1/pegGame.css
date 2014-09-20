@@ -1,14 +1,43 @@
+/*Formatting for HTML*/
+
+
 body {
-	background-color: #C3834C;
+	/*background-color: #C3834C;*/
+    background-image: url("pirate-background.jpg");
+    background-size: 100%;
+}
+
+h1{
+    background-color: none;
+    display: inline;
+    float: both;
+}
+
+div{
+    text-align: center;
+}
+
+.mainTitle{
+    background-color: "001e00";
+    font-size: 30px;
+    display: inline;
+    float: both;
+    width: 50px;
+}
+
+.crossbones{
+    display: inline;
+    float: both;
 }
 
 .controls {
-	text-align: center;
-	position: relative;
-	left: 50%;
+    text-align: left;
 }
 
-/*CSS3 ----> Used CSS3 Animations*/
+/*CSS3 */
+
+
+/*----> Used CSS3 Animations*/
 /*Title Changes Color*/
 h1 {
 	text-align: center;
