@@ -8,9 +8,10 @@ body {
 }
 
 h1{
+    vertical-align: 100px;
     background-color: none;
     display: inline;
-    float: both;
+    background-color: black;
 }
 
 div{
@@ -18,16 +19,15 @@ div{
 }
 
 .mainTitle{
+    vertical-align: middle;
     background-color: "001e00";
     font-size: 30px;
-    display: inline;
-    float: both;
-    width: 50px;
 }
 
 .crossbones{
+    vertical-align: middle;
+
     display: inline;
-    float: both;
 }
 
 .controls {
