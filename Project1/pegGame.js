@@ -353,7 +353,6 @@ function checkWin()
 		}
 
 		if(findValidMoves(i) != 0 && board[i].pegIn){
-			console.log(i);
 			loss = false;
 		}
 	}
