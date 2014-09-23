@@ -76,3 +76,12 @@ h1 {
     50%  {color: blue;}
     100% {color: #ff69b4;}
 }
+
+#help {
+    background: #001900;
+    border-radius: 40px;
+    width: 300px;
+    color: #ADFF85;
+    border: solid white 20px;
+
+}
