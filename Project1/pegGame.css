@@ -1,10 +1,9 @@
 /*Formatting for HTML*/
 
-
+/*----->Used CSS3 Backgrounds*/
 body {
-	/*background-color: #C3834C;*/
-    background-image: url("pirate-background.jpg");
-    background-size: 100%;
+    background-image: url("pirate-background.jpg");  /*This is CSS3*/
+    background-size: 100%; /*This is CSS3*/
 }
 
 h1{
@@ -18,6 +17,8 @@ div{
     text-align: center;
 }
 
+/*ID items*/
+
 .mainTitle{
     vertical-align: middle;
     background-color: "001e00";
@@ -26,13 +27,26 @@ div{
 
 .crossbones{
     vertical-align: middle;
-
     display: inline;
 }
 
 .controls {
     text-align: left;
 }
+
+.gameBoard{
+    display: inline;
+}
+
+.peg_leg{
+    display: inline;
+
+}
+
+/*.peg_leg2{
+    display: inline;
+    float: both;
+}*/
 
 /*CSS3 */
 
