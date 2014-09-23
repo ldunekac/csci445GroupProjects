@@ -344,17 +344,28 @@ function ereasePossibleMoves()
 function checkWin()
 {
 	var numberOfPegsRemaining = 0;
+	var loss = true;
 	for(var i = 0; i < 15; i++)
 	{
 		if(board[i].pegIn)
 		{
 			numberOfPegsRemaining = numberOfPegsRemaining + 1;
 		}
+
+		if(findValidMoves(i) != 0 && board[i].pegIn){
+			console.log(i);
+			loss = false;
+		}
 	}
 	if(numberOfPegsRemaining == 1)
 	{
 		drawBoard();
 		alert("YOU WIN!");
+	}
+
+	if(loss && numberOfPegsRemaining != 1){
+		drawBoard();
+		alert("YOU LOSE! PRESS RESET TO REPLAY.");
 	}
 }
 
