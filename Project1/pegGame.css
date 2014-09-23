@@ -8,7 +8,6 @@ body {
 
 h1{
     vertical-align: 100px;
-    background-color: none;
     display: inline;
     background-color: black;
 }
@@ -21,7 +20,7 @@ div{
 
 .mainTitle{
     vertical-align: middle;
-    background-color: "001e00";
+    background-color: #001E00;
 }
 
 .crossbones, .crossbones2{
@@ -42,7 +41,7 @@ h1 {
 	text-align: center;
 	-webkit-animation: myAnimation 5; /* Chrome, Safari, Opera */
 	-webkit-animation-iteration-count: infinite;
-    animation: myAnimation 5s;
+    animation: myAnimation 10s;
     animation-iteration-count: infinite;
 }
 

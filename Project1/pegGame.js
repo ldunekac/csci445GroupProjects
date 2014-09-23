@@ -17,7 +17,7 @@ window.onload = function(){
 		c.onclick = advance;
 
 		var ctx=c.getContext('2d');								//Get the context - needed for HTML5 manipulation
-		ctx.fillStyle='#001900';								//Make it blank to begin with
+		ctx.fillStyle="#001900";								//Make it blank to begin with
 		ctx.fillRect(0,0,700,700);							//Shape it
 		makeBoard();
 		drawBoard();
