@@ -6,34 +6,43 @@ body {
     background-size: 100%; /*This is CSS3*/
 }
 
-h1{
+h1 {
     vertical-align: 100px;
     display: inline;
     background-color: black;
 }
 
-div{
+div {
     text-align: center;
 }
 
 /*ID items*/
 
-.mainTitle{
+.mainTitle {
     vertical-align: middle;
     background-color: #001E00;
-}
-
-.crossbones, .crossbones2{
-    vertical-align: middle;
-    display: inline;
 }
 
 .controls {
     text-align: left;
 }
 
-/*CSS3 */
+#helpTitle{
+    /*CSS3 Text Effects- Text Shadow*/
+    text-shadow: 5px 5px 5px red;
+}
 
+/*----->Used CSS3 Text Effects*/
+
+#help {
+    background: #001900;
+    border-radius: 40px;
+    width: 300px;
+    color: #ADFF85;
+    border: solid white 20px;
+    margin: auto;
+    margin-top: 30px;
+}
 
 /*----> Used CSS3 Animations*/
 /*Title Changes Color*/
@@ -59,14 +68,4 @@ h1 {
     25%  {color: gold;}
     50%  {color: blue;}
     100% {color: #ff69b4;}
-}
-
-#help {
-    background: #001900;
-    border-radius: 40px;
-    width: 300px;
-    color: #ADFF85;
-    border: solid white 20px;
-    margin: auto;
-    margin-top: 30px;
 }
