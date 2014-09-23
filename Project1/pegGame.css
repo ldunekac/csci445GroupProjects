@@ -19,25 +19,12 @@ div{
 
 /*ID items*/
 
-.headTitle{
-    max-width: 100%;
-    height: auto;
-    width: auto;
-}
-
 .mainTitle{
-    max-width: 100%;
-    height: auto;
-    width: auto;
     vertical-align: middle;
     background-color: "001e00";
-    font-size: auto;
 }
 
 .crossbones, .crossbones2{
-    max-width: 100%;
-    height: auto;
-    width: auto;
     vertical-align: middle;
     display: inline;
 }
